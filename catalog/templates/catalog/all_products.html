@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<ul>
+    {% for product in products%}
+        <h6>{{product}}, {{product.created_at}}, {{product.modified}}, {{product.is_active}},{{product.is_visibility}},{{product.price}}, 
+            {{product.price_offer}}, {{product.offer_day_from}}, {{product.offer_day_to}},{{product.quantity}},{{product.sku}}, {{product.product_id}}
+            <button class="btn bg-warning" >Edit</i></button> <a class="btn bg-danger" href="{% url 'delete_product' pk=product.id %}">Delete</i></a>
+        </h6>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
