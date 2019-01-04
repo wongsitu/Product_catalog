@@ -18,6 +18,7 @@ def all_products(request):
     return render(request, 'catalog/all_products.html', {'products':products})
 
 # Create
+@login_required
 def create_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST)
@@ -41,6 +42,7 @@ def product_detail(request, pk):
     return render(request, 'catalog/product_detail.html',{'product':product})
 
 # Edit
+@login_required
 def product_edit(request,pk):
     product = Product.objects.get(_id=pk)
     if request.method == "POST":
@@ -64,6 +66,7 @@ def search(request):
     return render(request, 'catalog/searchpage.html',content)
 
 # Delete one
+@login_required
 def delete_product(request, pk):
     Product.objects.get(id=pk).delete()
     return redirect('all_products')
