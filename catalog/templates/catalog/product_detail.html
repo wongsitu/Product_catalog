@@ -1,5 +1,18 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-
+<ul>
+    <li><strong>id: {{product.id}}</strong></li>
+    <li><strong>created: {{product.created_at}}</strong></li>
+    <li><strong>modified: {{product.modified}}</strong></li>
+    <li><strong>is active: {{product.is_active}}</strong></li>
+    <li><strong>is visibility: {{product.is_visibility}}</strong></li>
+    <li><strong>price: {{product.price}}</strong></li>
+    <li><strong>price offer: {{product.price_offer}}</strong></li>
+    <li><strong>offer day from: {{product.offer_day_from}}</strong></li>
+    <li><strong>offer day to: {{product.offer_day_to}}</strong></li>
+    <li><strong>quantity: {{product.quantity}}</strong></li>
+    <li><strong>sku: {{product.sku}}</strong></li>
+    <li><strong>product id: {{product.product_id}}</strong></li>
+</ul>
 {% endblock %}
